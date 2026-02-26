@@ -97,7 +97,7 @@ Combining both provides:
 
 ---
 
-### ✨ Google Gemini 1.5 Flash (Reasoning-Focused Option)
+### ✨ Google Gemini Flash (Reasoning-Focused Option)
 
 **Why used:**
 
@@ -396,3 +396,4 @@ MIT License — Free for academic and personal use.
 ---
 
 *This project demonstrates how modern NLP systems combine traditional transformer models with LLMs to achieve high-quality summarization.*
+
