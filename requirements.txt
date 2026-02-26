@@ -1,0 +1,37 @@
+# PyTorch CPU/GPU (Latest stable - Feb 2026)
+torch>=2.4.0,<2.5.0
+torchvision>=0.19.0,<0.20.0
+torchaudio>=2.4.0,<2.5.0
+
+# Core ML Stack
+transformers==4.44.2
+datasets==2.21.0
+accelerate>=0.20.0
+sentencepiece>=0.2.0
+tokenizers>=0.19.0
+
+# NLP Evaluation (FIXED import issue)
+rouge-score==0.1.2
+
+# Web Framework
+streamlit==1.38.0
+
+# LLM Integration
+groq==0.5.0
+google-generativeai>=0.8.0
+
+# Web Scraping Pipeline (ULTIMATE scraper optimized)
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==5.3.0
+urllib3==2.2.2
+
+# Data Processing
+pandas==2.2.3
+numpy==2.1.1
+
+# Utilities
+pyngrok>=7.1.0
+Pillow==10.4.0
+
+
