@@ -1,29 +1,17 @@
-# ===== Streamlit Cloud PROD (Python 3.13.12) =====
+# ===== YOUR WORKING VENV - STREAMLIT CLOUD READY =====
 streamlit==1.38.0
-
-# ===== CPU PyTorch (NO CUDA, CORRECT VERSION) =====
---index-url https://download.pytorch.org/whl/cpu
-torch==2.5.0+cpu
---index-url https://pypi.org/simple/
-
-# ===== Core ML (Python 3.13 SAFE) =====
-transformers==4.46.3
-tokenizers==0.20.7
-sentencepiece==0.2.0
-accelerate==1.0.1
-datasets==3.0.2
-
-# ===== Data & Eval =====
-pandas==2.2.3
-numpy==2.1.1
+torch==2.10.0
+transformers==5.2.0
+tokenizers==0.22.2
+sentencepiece==0.2.1
+accelerate==1.12.0
+datasets==4.6.0
+pandas==2.3.3
+numpy==2.4.2
 rouge-score==0.1.2
-
-# ===== APIs =====
-groq==0.5.0
+groq==1.0.0
 google-generativeai==0.8.6
-
-# ===== Scraping =====
-requests==2.32.3
-beautifulsoup4==4.12.3
-lxml==5.3.0
-lxml-html-clean==0.4.1
+requests==2.32.5
+beautifulsoup4==4.14.3
+lxml==6.0.2
+lxml-html-clean==0.4.3
