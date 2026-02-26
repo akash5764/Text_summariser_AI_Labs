@@ -1,37 +1,59 @@
-# PyTorch CPU/GPU (Latest stable - Feb 2026)
-torch>=2.4.0,<2.5.0
-torchvision>=0.19.0,<0.20.0
-torchaudio>=2.4.0,<2.5.0
+# ============================================================
+# requirements.txt — Streamlit Cloud deployment
+# Akashchand Rajput | Text Summarizer Using LLM
+#
+# Key constraints solved:
+#   - torch CPU-only wheel (avoids 2GB+ CUDA download on cloud)
+#   - numpy<2  → streamlit 1.31 hard requirement
+#   - packaging<24  → streamlit 1.31 hard requirement
+#   - fsspec<=2024.6.1  → datasets 2.21.0 hard requirement
+#   - accelerate pinned → avoids meta-tensor crash on CPU
+# ============================================================
 
-# Core ML Stack
+# ── PyTorch (CPU-only — no GPU on Streamlit Cloud) ─────────
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.4.1+cpu
+torchvision==0.19.1+cpu
+
+# ── Hugging Face stack ──────────────────────────────────────
 transformers==4.44.2
 datasets==2.21.0
-accelerate>=0.20.0
+accelerate==0.34.2
+tokenizers==0.19.1
+safetensors>=0.4.1
+huggingface-hub>=0.23.2,<1.0
+
+# ── Pinned transitive deps (conflict prevention) ────────────
+numpy>=1.19.3,<2.0
+packaging>=16.8,<24
+fsspec>=2023.1.0,<=2024.6.1
+
+# ── App framework ───────────────────────────────────────────
+streamlit==1.31.0
+pandas>=2.2,<3.0
+pyarrow>=7.0
+
+# ── NLP / Evaluation ────────────────────────────────────────
 sentencepiece>=0.2.0
-tokenizers>=0.19.0
+rouge-score>=0.1.2
+nltk>=3.8
 
-# NLP Evaluation (FIXED import issue)
-rouge-score==0.1.2
+# ── LLM Providers ───────────────────────────────────────────
+groq>=0.4.1
+google-generativeai>=0.5.0
 
-# Web Framework
-streamlit==1.38.0
+# ── Web Scraping ────────────────────────────────────────────
+requests>=2.32.2
+beautifulsoup4>=4.12
+lxml>=4.9
+lxml_html_clean
+newspaper3k>=0.2.8
 
-# LLM Integration
-groq==0.5.0
-google-generativeai>=0.8.0
-
-# Web Scraping Pipeline (ULTIMATE scraper optimized)
-requests==2.32.3
-beautifulsoup4==4.12.3
-lxml==5.3.0
-urllib3==2.2.2
-
-# Data Processing
-pandas==2.2.3
-numpy==2.1.1
-
-# Utilities
-pyngrok>=7.1.0
-Pillow==10.4.0
-
-
+# ── Utilities ───────────────────────────────────────────────
+Pillow>=10
+python-dateutil>=2.8
+pytz>=2020.1
+tqdm>=4.27
+regex>=0.2019
+pyyaml>=5.1
+filelock>=3.0
