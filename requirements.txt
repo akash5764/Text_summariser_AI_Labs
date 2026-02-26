@@ -1,13 +1,19 @@
-# ===== Streamlit Cloud Optimized (Python 3.13+) =====
+# ===== Streamlit Cloud PROD (Python 3.13.12) =====
 streamlit==1.38.0
-torch==2.4.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+
+# ===== CPU PyTorch (NO CUDA, CORRECT VERSION) =====
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.5.0+cpu
+--index-url https://pypi.org/simple/
+
+# ===== Core ML (Python 3.13 SAFE) =====
 transformers==4.46.3
-tokenizers==0.20.5
+tokenizers==0.20.7
 sentencepiece==0.2.0
 accelerate==1.0.1
 datasets==3.0.2
 
-# ===== Data & Eval (Pinned) =====
+# ===== Data & Eval =====
 pandas==2.2.3
 numpy==2.1.1
 rouge-score==0.1.2
