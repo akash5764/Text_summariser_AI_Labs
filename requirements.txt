@@ -1,26 +1,23 @@
-# ===== Streamlit =====
-streamlit==1.31.0
+# ===== Streamlit Cloud Optimized (Python 3.13+) =====
+streamlit==1.38.0
+torch==2.4.1+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+transformers==4.46.3
+tokenizers==0.20.5
+sentencepiece==0.2.0
+accelerate==1.0.1
+datasets==3.0.2
 
-# ===== Core ML =====
-torch --index-url https://download.pytorch.org/whl/cpu
-transformers==4.44.2
-datasets==2.21.0
-sentencepiece>=0.2.0
-accelerate>=0.30
+# ===== Data & Eval (Pinned) =====
+pandas==2.2.3
+numpy==2.1.1
+rouge-score==0.1.2
 
-# ===== Data =====
-pandas>=2.2
-numpy>=1.26
-
-# ===== Evaluation =====
-rouge-score>=0.1.2
-
-# ===== LLM APIs =====
-groq>=0.4.1
-google-generativeai>=0.7.0
+# ===== APIs =====
+groq==0.5.0
+google-generativeai==0.8.6
 
 # ===== Scraping =====
-requests>=2.32.2
-beautifulsoup4>=4.12
-lxml>=4.9
-lxml_html_clean>=0.4.0
+requests==2.32.3
+beautifulsoup4==4.12.3
+lxml==5.3.0
+lxml-html-clean==0.4.1
