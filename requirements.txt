@@ -1,59 +1,26 @@
-# ============================================================
-# requirements.txt — Streamlit Cloud deployment
-# Akashchand Rajput | Text Summarizer Using LLM
-#
-# Key constraints solved:
-#   - torch CPU-only wheel (avoids 2GB+ CUDA download on cloud)
-#   - numpy<2  → streamlit 1.31 hard requirement
-#   - packaging<24  → streamlit 1.31 hard requirement
-#   - fsspec<=2024.6.1  → datasets 2.21.0 hard requirement
-#   - accelerate pinned → avoids meta-tensor crash on CPU
-# ============================================================
+# ===== Streamlit =====
+streamlit==1.31.0
 
-# ── PyTorch (CPU-only — no GPU on Streamlit Cloud) ─────────
---extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.4.1+cpu
-torchvision==0.19.1+cpu
-
-# ── Hugging Face stack ──────────────────────────────────────
+# ===== Core ML =====
+torch --index-url https://download.pytorch.org/whl/cpu
 transformers==4.44.2
 datasets==2.21.0
-accelerate==0.34.2
-tokenizers==0.19.1
-safetensors>=0.4.1
-huggingface-hub>=0.23.2,<1.0
-
-# ── Pinned transitive deps (conflict prevention) ────────────
-numpy>=1.19.3,<2.0
-packaging>=16.8,<24
-fsspec>=2023.1.0,<=2024.6.1
-
-# ── App framework ───────────────────────────────────────────
-streamlit==1.31.0
-pandas>=2.2,<3.0
-pyarrow>=7.0
-
-# ── NLP / Evaluation ────────────────────────────────────────
 sentencepiece>=0.2.0
+accelerate>=0.30
+
+# ===== Data =====
+pandas>=2.2
+numpy>=1.26
+
+# ===== Evaluation =====
 rouge-score>=0.1.2
-nltk>=3.8
 
-# ── LLM Providers ───────────────────────────────────────────
+# ===== LLM APIs =====
 groq>=0.4.1
-google-generativeai>=0.5.0
+google-generativeai>=0.7.0
 
-# ── Web Scraping ────────────────────────────────────────────
+# ===== Scraping =====
 requests>=2.32.2
 beautifulsoup4>=4.12
 lxml>=4.9
-lxml_html_clean
-newspaper3k>=0.2.8
-
-# ── Utilities ───────────────────────────────────────────────
-Pillow>=10
-python-dateutil>=2.8
-pytz>=2020.1
-tqdm>=4.27
-regex>=0.2019
-pyyaml>=5.1
-filelock>=3.0
+lxml_html_clean>=0.4.0
